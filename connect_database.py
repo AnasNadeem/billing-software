@@ -4,6 +4,7 @@ from constants import *
 def create_db():
     conn = psycopg2.connect(host=DB_HOST,database=DB_NAME, user=DB_USER, password=DB_PASS)
     cur = conn.cursor()    
+    # cur.execute(""" INSERT INTO users (username, pass) VALUES (%s,%s)""", ("anas", "anas"))
     cur.execute("""CREATE TABLE IF NOT EXISTS users(
         id SERIAL PRIMARY KEY,
         username varchar(100) NOT NULL UNIQUE,
