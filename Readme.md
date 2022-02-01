@@ -15,5 +15,9 @@ Database with Tables are now created.
 7. Comment the Table queries in connect_database.py and comment out the ```INSERT INTO users (username, pass) VALUES (%s,%s)""", ("anas", "anas")```. 
 8. Everything's DONE. Now play around  ```py  login_dash.py```
 
+#### Now at this point if you want to create a application i.e., exe file. Then just do this
+```
+python cxsetup.py bdist_msi
+```
 
-### ENJOY :)
+###  Installer is in dist folder. HURRAH ENJOY. :)

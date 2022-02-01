@@ -3,8 +3,10 @@ import sys
 import os
 import platform
 
+cwd = os.getcwd()
+icon_loc = os.path.join(os.path.join(cwd, 'images'), 'chilloi.ico')
 include_files = [
-    ('E:\\Billing Software\mobileadda\images', 'images')
+    (os.path.join(cwd, 'images'), 'images')
 ]
 
 if platform.system() == 'Windows':
@@ -31,7 +33,7 @@ cx.setup(
     version='1.0',
     author='Anas Nadeem',
     author_email='anas5678go@gmail.com',
-    description='Billing Software For Mobile Adda.',
+    description='Billing Software.',
     # packages=['billing_software'],
     options={
         'build_exe':{
@@ -44,5 +46,5 @@ cx.setup(
             'data':{'Shortcut':shortcut_data}
         }
     },
-    executables = [cx.Executable("login_dash.py", base=base, target_name=target_name, icon='E:\\Billing Software\mobileadda\images\chilloi.ico')],
+    executables = [cx.Executable("login_dash.py", base=base, target_name=target_name, icon=icon_loc)],
 )
